@@ -1,0 +1,8 @@
+<mvc:View xmlns:core="sap.ui.core" 
+    controllerName="fiori.walkthrough.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Button press=".onPressHello" text="{i18n>showHelloButtonText}"></Button>
+    <Input value="{/year}" description="Year {/year}" valueLiveUpdate="true" width="50%"/>
+    <Input value="{/dateTime}" description="Date Time {/dateTime}" valueLiveUpdate="true" width="50%"/>
+</mvc:View>

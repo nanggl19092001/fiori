@@ -1,0 +1,11 @@
+{
+    "_version": "1.72.0",
+    "sap.app": {
+        "id": "fiori.walkthrough",
+        "title": "An Fiori App",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "type": "application"
+    }
+}
