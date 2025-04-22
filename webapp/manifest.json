@@ -2,10 +2,106 @@
     "_version": "1.72.0",
     "sap.app": {
         "id": "fiori.walkthrough",
-        "title": "An Fiori App",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
         "applicationVersion": {
             "version": "1.0.0"
         },
+        "dataSources": {
+            "invoiceRemote": {
+                "uri": "V2/northwind/northwind.svc/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            },
+            "agencyService": {
+                "uri": "V2/northwind/northwind.svc/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        },
+        "i18n": {
+            "bundleName": "fiori.walkthrough.i18n.i18n",
+            "supportedLocales": []
+        },
         "type": "application"
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "phone": true,
+            "tablet": true
+        }
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "minUI5Version": "1.120.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "rootView": {
+            "viewName": "fiori.walkthrough.view.App",
+            "async": true,
+            "type": "XML",
+            "id": "app"
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "i18n",
+                    "supportedLocales": [],
+                    "fallbackLocale": ""
+                }
+            },
+            "invoice": {
+                "dataSource": "invoiceRemote"
+            }
+        },
+        "resources": {
+            "css": [{
+                "id": "css",
+                "uri":"css/style.css"
+            }]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "fiori.walkthrough.view",
+                "controlId": "app",
+                "controlAggregation": "pages"
+            },
+            "routes": [{
+                "pattern": "",
+                "name": "overview",
+                "target": "overview"
+            },{
+                "pattern": "detail",
+                "name": "detail",
+                "target": "detail"
+            }],
+            "targets": {
+                "overview": {
+                    "viewId": "overview",
+                    "viewName": "Overview"
+                },
+                "detail": {
+                    "viewId": "detail",
+                    "viewName": "Detail"
+                }
+            }
+        }
     }
 }

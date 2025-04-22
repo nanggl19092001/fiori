@@ -1,0 +1,51 @@
+<mvc:View
+    controllerName="fiori.walkthrough.controller.HelloPanel"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:p13n="sap.m.p13n"
+    displayBlock="true"
+>
+    <Panel
+        headerText="{i18n>inputPanelTitle}"
+        class="sapUiResponsiveMargin"
+    >
+        <content>
+            <Panel>
+                <content>
+                    <Button
+                        press=".onPressHello"
+                        text="{i18n>showHelloButtonText}"
+                        class="sapUiSmallMarginEnd"
+                    />
+                    <Button
+                        press=".onPressDialogHello"
+                        text="{i18n>showDialogHelloButtonText}"
+                        class="sapUiSmallMarginEnd"
+                        icon="sap-icon://ui-notifications"
+                    />
+                </content>
+            </Panel>
+            <Panel>
+                <Input
+                    value="{/year}"
+                    description="Year {/year}"
+                    valueLiveUpdate="true"
+                    width="50%"
+                />
+                <FormattedText
+                    htmlText="Hello this is year {/year}"
+                    class="sapUiSmallMargin txt-bold"
+                />
+            </Panel>
+            <Panel>
+                <Input
+                    value="{/dateTime}"
+                    description="Date Time {/dateTime}"
+                    valueLiveUpdate="true"
+                    width="50%"
+                />
+            </Panel>
+
+        </content>
+    </Panel>
+</mvc:View>
