@@ -3,10 +3,14 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
 >
-        <Page title="{i18n>homePageTitle}">
-            <content>
-                <mvc:XMLView viewName="fiori.walkthrough.view.HelloPanel" />
-                <mvc:XMLView viewName="fiori.walkthrough.view.Invoice" />
-            </content>
-        </Page>
+    <Page
+        title="{i18n>homePageTitle}"
+        showNavButton="true"
+        navButtonPress="onNavPress"
+    >
+        <content>
+            <mvc:XMLView viewName="fiori.walkthrough.view.HelloPanel" />
+            <mvc:XMLView viewName="fiori.walkthrough.view.Invoice" />
+        </content>
+    </Page>
 </mvc:View>

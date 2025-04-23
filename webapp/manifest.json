@@ -85,15 +85,23 @@
             },
             "routes": [{
                 "pattern": "",
-                "name": "overview",
-                "target": "overview"
+                "name": "application",
+                "target": "application"
             },{
-                "pattern": "detail",
+                "pattern": "walkthrough",
+                "name": "walkthrough",
+                "target": "walkthrough"
+            },{
+                "pattern": "walkthrough/detail",
                 "name": "detail",
                 "target": "detail"
             }],
             "targets": {
-                "overview": {
+                "application": {
+                    "viewId": "application",
+                    "viewName": "ApplicationList"
+                },
+                "walkthrough": {
                     "viewId": "overview",
                     "viewName": "Overview"
                 },
