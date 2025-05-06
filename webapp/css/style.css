@@ -5,3 +5,7 @@
 .txt-bold:hover {
     text-decoration: underline;
 }
+
+.tile_padding {
+    margin: 1rem;
+}

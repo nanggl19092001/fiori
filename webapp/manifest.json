@@ -21,6 +21,21 @@
                 "settings": {
                     "odataVersion": "2.0"
                 }
+            },
+            "agencyOdataService": {
+                "uri": "/sap/opu/odata/sap/ZSB_TRAVEL_NANG_UI_V2/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "annotations": ["ZSB_TRAVEL_NANG_UI_V2"]
+                }
+            },
+            "capService": {
+                "uri": "/app/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0"
+                }
             }
         },
         "i18n": {
@@ -67,6 +82,9 @@
             },
             "invoice": {
                 "dataSource": "invoiceRemote"
+            },
+            "capAppList": {
+                "dataSource": "capService"
             }
         },
         "resources": {

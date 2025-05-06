@@ -6,38 +6,38 @@
     xmlns:core="sap.ui.core"
 >
     <Page title="{i18n>applicationPageTitle}">
+        <subHeader>
+            <Bar id="searchBar">
+                <contentMiddle>
+                    <SearchField
+                        id="idSearchField"
+                        liveChange=".onSearch"
+                    />
+                </contentMiddle>
+            </Bar>
+        </subHeader>
         <content>
-            <Panel class="sapUiSmallMarginTop">
-                <f:GridContainer width="100%">
-                    <f:layout>
-                        <f:GridContainerSettings
-                            rowSize="84px"
-                            columnSize="84px"
-                            gap="8px"
+            <Panel
+                class="sapUiSmallMarginTop"
+                expandable="true"
+                expanded="true"
+                width="100%"
+                content="{capAppList>/App}"
+                headerText="{i18n>applicationHeaderText}"
+            >
+                <GenericTile
+                    header="{capAppList>header}"
+                    subheader="{capAppList>subheader}"
+                    press=".onPress"
+                    class="tile_padding"
+                >
+                    <layoutData>
+                        <f:GridContainerItemLayoutData
+                            minRows="2"
+                            columns="2"
                         />
-                    </f:layout>
-                    <f:layoutXS>
-                        <f:GridContainerSettings
-                            rowSize="70px"
-                            columnSize="70px"
-                            gap="8px"
-                        />
-                    </f:layoutXS>
-
-                    <GenericTile
-                        header="{i18n>walkthroughTileHeader}"
-                        subheader="{i18n>walkthroughTileSubheader}"
-                        press=".onPress"
-                        id="walkthrough"
-                    >
-                        <layoutData>
-                            <f:GridContainerItemLayoutData
-                                minRows="2"
-                                columns="2"
-                            />
-                        </layoutData>
-                    </GenericTile>
-                </f:GridContainer>
+                    </layoutData>
+                </GenericTile>
             </Panel>
         </content>
     </Page>

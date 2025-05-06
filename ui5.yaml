@@ -39,6 +39,8 @@ server:
         - path: /V2
           url: https://services.odata.org
           destination: Northwind
+        - path: /app
+          url: https://port4004-workspaces-ws-hc2jw.us10.trial.applicationstudio.cloud.sap
   - name: fiori-tools-appreload
     afterMiddleware: compression
     configuration:
