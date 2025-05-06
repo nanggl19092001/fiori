@@ -6,6 +6,8 @@ import FilterOperator from "sap/ui/model/FilterOperator";
 import ListBinding from "sap/ui/model/Binding";
 import formatter from "../model/formatter";
 import UIComponent from "sap/ui/core/UIComponent";
+import Event from "sap/ui/base/Event";
+import ObjectListItem from "sap/m/ObjectListItem";
 
 export default class InvoiceController extends Controller {
     formatterFunction = formatter.statusText;
@@ -29,8 +31,12 @@ export default class InvoiceController extends Controller {
         oBinding?.filter(aFilter);
     }
 
-    onNavigate(oEvent: any): void{
+    onNavigate(oEvent: Event): void{
+        let oItem = oEvent.getSource() as ObjectListItem;
+        
         let oNav = (this.getOwnerComponent() as UIComponent)?.getRouter();
-        oNav.navTo("detail");
+        oNav.navTo("detail", {
+            "invoicePath": window.encodeURIComponent(<string> oItem.getBindingContext("invoice")?.getPath().substring(1))
+        });
     }
 }

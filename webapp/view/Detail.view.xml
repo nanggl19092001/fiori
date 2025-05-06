@@ -7,5 +7,9 @@
         title="{i18n>detailPageTitle}"
         showNavButton="true"
         navButtonPress="onNavPress"
-    />
+    >
+    <content>
+        <ObjectHeader intro="{invoice>ShipperName}" title="{invoice>ProductName}"/>
+    </content>
+    </Page>
 </mvc:View>

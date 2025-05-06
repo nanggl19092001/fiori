@@ -92,7 +92,7 @@
                 "name": "walkthrough",
                 "target": "walkthrough"
             },{
-                "pattern": "walkthrough/detail",
+                "pattern": "walkthrough/detail/{invoicePath}",
                 "name": "detail",
                 "target": "detail"
             }],
