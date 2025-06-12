@@ -16,6 +16,8 @@
                 group: true
             }
         }"
+        growing="true"
+        growingThreshold="10"
     >
         <headerToolbar>
             <Toolbar>
@@ -25,6 +27,7 @@
                     width="50%"
                     search=".onSearchField"
                 />
+                <Button icon="sap-icon://refresh" press=".onRefresh"/>
             </Toolbar>
         </headerToolbar>
         <items>

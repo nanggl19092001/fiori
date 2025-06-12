@@ -8,6 +8,7 @@ import formatter from "../model/formatter";
 import UIComponent from "sap/ui/core/UIComponent";
 import Event from "sap/ui/base/Event";
 import ObjectListItem from "sap/m/ObjectListItem";
+import { Button$PressEvent } from "sap/m/Button";
 
 export default class InvoiceController extends Controller {
     formatterFunction = formatter.statusText;
@@ -38,5 +39,9 @@ export default class InvoiceController extends Controller {
         oNav.navTo("detail", {
             "invoicePath": window.encodeURIComponent(<string> oItem.getBindingContext("invoice")?.getPath().substring(1))
         });
+    }
+
+    onRefresh(oEvent: Button$PressEvent) {
+        this.getView()?.byId("invoiceList")?.getModel("invoice")?.refresh();
     }
 }

@@ -1,4 +1,4 @@
-<mvc:View
+<mvc:View xmlns:uxap="sap.uxap"
     controllerName="fiori.walkthrough.controller.Detail"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
@@ -9,7 +9,10 @@
         navButtonPress="onNavPress"
     >
     <content>
-        <ObjectHeader intro="{invoice>ShipperName}" title="{invoice>ProductName}"/>
+        <ObjectHeader intro="{invoice>ShipperName}" title="{invoice>ProductName}" icon="{= ${invoice>UnitPrice} > 70 ? 'sap-icon://bookmark' : 'sap-icon://bookmark-2' }"/>
+        <uxap:ObjectPageLayout showAnchorBar="true">
+            <uxap:ObjectPageSection ></uxap:ObjectPageSection>
+        </uxap:ObjectPageLayout>
     </content>
     </Page>
 </mvc:View>

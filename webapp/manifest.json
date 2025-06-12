@@ -53,6 +53,7 @@
         }
     },
     "sap.ui5": {
+        "flexEnabled": true,
         "dependencies": {
             "minUI5Version": "1.120.0",
             "libs": {
@@ -113,6 +114,10 @@
                 "pattern": "walkthrough/detail/{invoicePath}",
                 "name": "detail",
                 "target": "detail"
+            },{
+                "pattern": "task",
+                "name": "task",
+                "target": "task"
             }],
             "targets": {
                 "application": {
@@ -126,6 +131,10 @@
                 "detail": {
                     "viewId": "detail",
                     "viewName": "Detail"
+                },
+                "task": {
+                    "viewId": "task",
+                    "viewName": "Task"
                 }
             }
         }

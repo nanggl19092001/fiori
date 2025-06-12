@@ -8,12 +8,15 @@
     <Page title="{i18n>applicationPageTitle}">
         <subHeader>
             <Bar id="searchBar">
-                <contentMiddle>
+                <contentLeft>
                     <SearchField
                         id="idSearchField"
                         liveChange=".onSearch"
                     />
-                </contentMiddle>
+                </contentLeft>
+                <contentRight>
+                    <Button icon="sap-icon://refresh" press=".onRefresh"/>
+                </contentRight>
             </Bar>
         </subHeader>
         <content>
@@ -24,6 +27,7 @@
                 width="100%"
                 content="{capAppList>/App}"
                 headerText="{i18n>applicationHeaderText}"
+                id="appPanel"
             >
                 <GenericTile
                     header="{capAppList>header}"
